@@ -1,0 +1,41 @@
+.content {
+    max-width: 600px;
+    margin: auto;
+}
+
+.avatar-and-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    /*
+    border-style: solid;
+    border-width: thin;
+    */
+}
+
+.avatar {
+    margin: 0.5em;
+    flex: 0 0 80px;
+}
+
+.avatar a {
+    display: block;
+}
+
+.avatar img {
+    width: 100%;
+    border-radius: 50%;
+}
+
+.links {
+    flex: 1 0 260px;
+}
+
+.links li + li {
+    margin-top: 0.5em;
+}
+
+.w100 {
+    width: 100%;
+}
