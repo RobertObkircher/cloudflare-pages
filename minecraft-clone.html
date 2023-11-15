@@ -4,14 +4,75 @@
     <meta charset="UTF-8">
     <title>Minecraft clone!</title>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-
+    <style>
+        #statistics {
+            position: absolute;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.3);
+            padding: 1em;
+            margin: 1em;
+        }
+        #statistics:empty {
+            display: none;
+        }
+        @media (max-width: 700px){
+            #statistics {
+                font-size: 50%;
+            }
+        }
+        kbd {
+            border-radius: 2px;
+            padding-left: 1px;
+            padding-right: 1px;
+            border: 1px solid black;
+        }
+        canvas {
+            margin-top: 2px;
+            aspect-ratio: 16 / 9;
+            width: 100%;
+            max-width: 100vh;
+        }
+        @media (min-width: 480px){
+            .controls {
+                display: flex;
+            }
+        }
+        .controls>ul {
+            list-style: none;
+            padding-left: 1em;
+        }
+        #fullscreen-button {
+            margin: 1em;
+            margin-top: 0;
+        }
+    </style>
 </head>
 <body>
-Code and controls are available on <a href="https://github.com/RobertObkircher/minecraft-clone">GitHub</a>!<br>
-<script type="module">
-    import init from "./pkg/minecraft_clone.js";
+The code is available on <a href="https://github.com/RobertObkircher/minecraft-clone">GitHub</a>!<br>
 
-    init();
-</script>
+<div class="controls">
+    <ul>
+        <li><b>PC-Controls</b>:</li>
+        <li><kbd>W</kbd> <kbd>A</kbd> <kbd>S</kbd> <kbd>D</kbd> movement</li>
+        <li><kbd>Left-Click</kbd> destroy block</li>
+        <li><kbd>Right-Click</kbd> place block</li>
+        <li><kbd>Q</kbd> explosion</li>
+        <li><kbd>E</kbd> anti-explosion</li>
+        <li><kbd>P</kbd> toggle statistics printing</li>
+        <li><kbd>ESC</kbd> release captured mouse</li>
+    </ul>
+    <ul>
+        <li><b>Touch-Controls:</b></li>
+        <li><kbd>Swipe</kbd> look around </li>
+        <li><kbd>Swipe-And-Hold</kbd> move up/forward</li>
+        <li><kbd>Long-Tap</kbd> destroy block</li>
+        <li><kbd>Short-Tap</kbd> place block</li>
+        <li><kbd>Two-Finger-Long-Tap</kbd> explosion</li>
+    </ul>
+</div>
+<button id="fullscreen-button" type="button" onclick="let c = document.getElementsByTagName('canvas')[0]; c.requestFullscreen(); c.focus();">Fullscreen</button>
+<br>
+<pre id="statistics"></pre>
+<script type="module" src="worker.js"></script>
 </body>
 </html>
