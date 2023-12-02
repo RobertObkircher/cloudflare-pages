@@ -4,6 +4,18 @@
     padding-bottom: 100px;
 }
 
+a {
+    background-image: linear-gradient(90deg, #0000EE, #551A8B);
+    background-size: 0% 3px;
+    background-repeat: no-repeat;
+    background-position: right bottom;
+    transition: background-size 300ms ease;
+}
+a:where(:hover, :focus-visible) {
+    background-size: 100% 3px;
+    background-position: left bottom;
+}
+
 .avatar-and-info {
     display: flex;
     flex-wrap: wrap;
@@ -58,6 +70,18 @@
 }
 
 .projects>li>a {
-    text-decoration: none;
     font-weight: bold;
 }
+
+.pill {
+    border: 1px solid lightgray;
+    color: dimgray;
+    border-radius: 1em;
+    padding: 0 .33em;
+    margin-left: auto;
+    font-size: 66%;
+    margin-top: .33em;
+    margin-left: .33em;
+    float: right;
+}
+

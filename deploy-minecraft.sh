@@ -8,6 +8,5 @@ cp ../minecraft-clone/index.html minecraft-clone.html
 cp ../minecraft-clone/worker.js worker.js
 
 git add .
-git commit --amend && git push -f
-
+git commit && git push -f
 
