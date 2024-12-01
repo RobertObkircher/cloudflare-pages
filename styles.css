@@ -62,6 +62,20 @@ a:where(:hover, :focus-visible) {
     }
 }
 
+.gray-border {
+    border-color: lightgray;
+    border-radius: 0.375rem;
+    border-style: solid;
+    border-width: max(1px, 0.0625rem);
+}
+.list {
+    list-style: none;
+    padding: 0 1em;
+}
+.list>li + li {
+    margin-top: 10px;
+}
+
 .projects>li {
     border-color: lightgray;
     border-radius: 0.375rem;
@@ -70,7 +84,7 @@ a:where(:hover, :focus-visible) {
     padding: 1rem 1rem 0;
 }
 .projects>li>img {
-    width: 110%;
+    width: 100%;
 }
 
 .projects>li>a {
@@ -88,4 +102,10 @@ a:where(:hover, :focus-visible) {
     margin-left: .33em;
     float: right;
 }
-
+.gray-border>.pill:first-child {
+    margin-top: 1em;
+}
+.gray-border>.pill {
+    margin-right: 1em;
+    clear: both;
+}
