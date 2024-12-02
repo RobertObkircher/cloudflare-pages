@@ -73,7 +73,7 @@ a:where(:hover, :focus-visible) {
     padding: 0 1em;
 }
 .list>li + li {
-    margin-top: 10px;
+    margin-top: 1em;
 }
 
 .projects>li {
